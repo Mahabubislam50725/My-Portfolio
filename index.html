@@ -1,206 +1,618 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="Styles.css/index.css">
-    <title>Document</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahabub Islam | Software Engineer & Machine Learning Developer</title>
+  <meta name="description" content="Portfolio of Mahabub Islam - Computer Science student at AIUB specializing in Software Engineering, Frontend Development (React, Next.js), and Machine Learning.">
+  <meta name="author" content="Mahabub Islam">
+  <meta name="keywords" content="Mahabub Islam, Portfolio, Software Engineer, Frontend Developer, Machine Learning, React, Next.js, Python, AIUB, Dhaka Bangladesh">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Mahabub Islam | Software Engineering & Machine Learning Portfolio">
+  <meta property="og:description" content="CSE Student at AIUB with hands-on experience in React.js, Next.js, Python ML, and database-driven web applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/Mahabubislam50725">
+  <meta property="og:image" content="assets/images/Mahabub1.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="font-open-sans">
-     <header>
-            <nav>
-                <div class="logo">
-                    <h2>Ma<span class="color-orange">h</span>ab<span class="color-orange">u</span>b</h2>
-                </div>
-                <ul class="menu">
-                    <li><a href="">Portfolio</a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><button class="btn">Hire me</button></li>
-                </ul>
-            </nav>
-            <section id="banner">
-                <div class="banner-content">
-                    <h2>Hi, I  am</h2>
-                    <h1>Mahabub Islam</h1>
-                    <p>Shot what able cold new see hold.Friendly as an betrayed formerly he. Morning because as to society behaved moments.</p>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" class="scroll-progress"></div>
 
-                    <div>
-                        <button class="btn"><i class="fa-solid fa-download"></i> Download CV</button>
-                        <button class="btn"><i class="fa-solid fa-phone"></i> Contact</button>
-                    </div>
-                </div>
-                 <div class="banner-image">
-                      <img src="images/Mahabub1.png" alt="">
-                 </div>
+  <!-- Background Animated Canvas -->
+  <canvas id="bg-canvas"></canvas>
 
-            </section>
-     </header>
-     <section id="about">
-        <div class="about-container">
-            <div class="section-heading">
-                <h2>About ME</h2>
-                <p>I, m a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user. Thousands of clients have procured exceptional resulfs while working with me. Delivering work within time and budget which meets clients requirements in our mata.</p>
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">Mahabub Islam</a>
 
+      <nav class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a>
+        <a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="open-resume-btn" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-file-pdf"></i> Resume
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <i class="fa-paper-plane fa-regular"></i> Hire Me
+        </a>
+        <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-pulse"></span>
+            <span>Seeking Software Engineering, Frontend & ML Internships</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Mahabub Islam</span>
+          </h1>
+
+          <div class="hero-subtitle-container">
+            <span class="subtitle-prefix">I build</span>
+            <span id="typewriter" class="typewriter-text"></span>
+            <span class="cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Computer Science & Engineering Student at <strong>AIUB</strong> (CGPA: <strong>3.80/4.00</strong>). Passionate about crafting high-performance web applications, modern responsive UIs, database architectures, and machine learning models.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary btn-lg shadow-glow">
+              <i class="fa-solid fa-rocket"></i> Explore Projects
+            </a>
+            <a href="https://github.com/Mahabubislam50725" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+              <i class="fa-brands fa-github"></i> GitHub Profile
+            </a>
+            <a href="mailto:mahabubislam50725.aiub@gmail.com" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-envelope"></i> Get In Touch
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-number" data-target="3.80" data-decimals="2">0.00</div>
+              <div class="stat-label">CGPA / 4.00 (AIUB)</div>
             </div>
-            <div class="about-info">
-                <div class="ïnfo-card">
-                    <p>Name:</p>
-                    <h4>Mahabub Islam</h4>
-                </div>
-                <div class="ïnfo-card">
-                    <p>Email:</p>
-                    <h4>Mahabubislam50725@gmail.com</h4>
-                </div>
-                <div class="ïnfo-card">
-                    <p>Date of birth:</p>
-                    <h4>14 Septembar 2004</h4>
-                </div>
-                <div class="ïnfo-card">
-                    <p>From:</p>
-                    <h4>Dhaka,Bangladesh</h4>
-                </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="6">0</div>
+              <div class="stat-label">Featured Projects</div>
             </div>
-              
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="10" data-suffix="+">0</div>
+              <div class="stat-label">Core Tech Stack</div>
+            </div>
+          </div>
         </div>
 
-     </section>
-     <section id="skills">
-        <div class="skills-container">
-            <div class="section-heading">
-                <h2>What I do</h2>
-                <p>I have more than 10 years experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies i use. Want to find out more about my experience? Check out my online resume and project portfolio.</p>
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-glow-ring"></div>
+            <div class="avatar-glow-ring secondary"></div>
+            <div class="avatar-frame">
+              <img src="assets/images/Mahabub1.png" alt="Mahabub Islam Profile Avatar" class="avatar-img">
             </div>
-            <div class="skill-box">
-                <div class="skill-card">
-                    <img src="images/icons/js.png" alt="">
-                    <h3>Vanilla JavaScript</h3>
-                    <p>List skill/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/icons/react.png" alt="">
-                    <h3>React</h3>
-                    <p>List skill/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/icons/nodejs.png" alt="">
-                    <h3>Node Js</h3>
-                    <p>List skill/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/icons/mongo.png" alt="">
-                    <h3>MongoDB</h3>
-                    <p>List skill/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-                </div>
+
+            <!-- Floating Tech Badges -->
+            <div class="floating-badge badge-1" title="React.js & Next.js">
+              <i class="fa-brands fa-react react-spin"></i>
+              <span>React / Next</span>
             </div>
-        </div>
-     </section>
-     <section id="resume">
-        <div class="section-heading">
-            <h2>A summary of My Resume </h2>
-        </div>
-        <div class="resume-container">
-                <div class="education">
-                    <h2 class="section-title">My Education</h2>
-                    <div class="resume-card">
-                        <h3 class="card-title">Master in Computer Engineering</h3>
-                        <p class="card-info">Harvard University / 2015 - 2017</p>
-                        <p class="card-text">List skill/technologies here. You can change the icon above 
-                         to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-
-                    </div>
-                    <hr>
-                    <div class="resume-card">
-                        <h3 class="card-title">Master in Computer Engineering</h3>
-                        <p class="card-info">Harvard University / 2015 - 2017</p>
-                        <p class="card-text">List skill/technologies here. You can change the icon above 
-                         to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-
-                    </div>
-                    <hr>
-                    <div class="resume-card">
-                        <h3 class="card-title">Master in Computer Engineering</h3>
-                        <p class="card-info">Harvard University / 2015 - 2017</p>
-                        <p class="card-text">List skill/technologies here. You can change the icon above 
-                         to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-
-                    </div>
-                    <hr>
-
-
-                </div>
-                
-                <div class="experience">
-                    <h2 class="section-title">My Experience</h2>
-                    <div class="resume-card">
-                        <h3 class="card-title">Sr. Font End Developer</h3>
-                        <p class="card-info">Apple Inc / 2020 - Current</p>
-                        <p class="card-text">List skill/technologies here. You can change the icon above 
-                        to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-
-                    </div>
-                    <hr>
-                    <div class="resume-card">
-                        <h3 class="card-title">Jr. Font End Developer</h3>
-                        <p class="card-info">Dribbble Inc / 2018 - 2022</p>
-                        <p class="card-text">List skill/technologies here. You can change the icon above 
-                        to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-
-                    </div>
-                    <hr>
-                    <div class="resume-card">
-                        <h3 class="card-title">HTML Developer</h3>
-                        <p class="card-info">Adobe Inc / 2017 - 2018</p>
-                        <p class="card-text">List skill/technologies here. You can change the icon above 
-                         to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
-
-                    </div>
-                    <hr>
-                    
-
-                </div>
-                
-        </div>
-        <div class="text-center">
-            <button class="btn"><i class="fa-solid fa-download"></i> Download CV</button>
-
-        </div>
-              
-     </section>
-
-     <footer>
-        <section class="footer-container">
-            <div class="social">
-                <h2>Lets Connect</h2>
-                <p>Please fill out the form on this section to contact with me or call between 9:00 A.M and 8.00 P.M ET, Monday through Friday.</p>
-                <div class="icons">
-                    <a href=""><img src="images/icons/facebook.png" alt=""></a>
-                    <a href=""><img src="images/icons/twitter.png" alt=""></a>
-                    <a href=""><img src="images/icons/insta.png" alt=""></a>
-
-                </div>
+            <div class="floating-badge badge-2" title="Python Machine Learning">
+              <i class="fa-brands fa-python"></i>
+              <span>Python & ML</span>
             </div>
-            <form class="form">
-                <h2>Let’s Message me</h2>
+            <div class="floating-badge badge-3" title="MySQL & Databases">
+              <i class="fa-solid fa-database"></i>
+              <span>PHP & MySQL</span>
+            </div>
+            <div class="floating-badge badge-4" title="Data Structures & OOP">
+              <i class="fa-solid fa-code-branch"></i>
+              <span>OOP & DSA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag"><i class="fa-solid fa-user-astronaut"></i> Background</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-panel">
+            <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Professional Summary</h3>
+            <p>
+              I am a Computer Science and Engineering student at <strong>American International University-Bangladesh (AIUB)</strong> with a strong academic standing (CGPA: 3.80/4.00) and hands-on experience across full-stack frontend development and machine learning classification algorithms.
+            </p>
+            <p>
+              I thrive on turning complex problems into intuitive, responsive, and robust software solutions. Whether designing multi-tier database systems in MySQL/PHP or training predictive Machine Learning models (Logistic Regression, Random Forest, GridSearchCV) using Python & Scikit-learn, I aim for code quality, architectural clarity, and visual elegance.
+            </p>
+          </div>
+
+          <div class="about-info-column">
+            <div class="info-card glass-panel">
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
                 <div>
-                <input type="text" placeholder="Your Name">
+                  <span class="info-label">Location</span>
+                  <span class="info-value">Dhaka, Bangladesh</span>
                 </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                 <div>
-                <input type="text" placeholder="Your Email">
+                  <span class="info-label">Degree Target</span>
+                  <span class="info-value">B.Sc. CSE (Expected April 2027)</span>
                 </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                 <div>
-                    <textarea rows="10" id="" placeholder="Message"></textarea>
+                  <span class="info-label">Email</span>
+                  <a href="mailto:mahabubislam50725.aiub@gmail.com" class="info-value link">mahabubislam50725.aiub@gmail.com</a>
                 </div>
-                <input class="btn" type="button" value="submit">
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="info-label">Phone</span>
+                  <a href="tel:+8801782088760" class="info-value link">+880 1782088760</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-language"></i></div>
+                <div>
+                  <span class="info-label">Languages</span>
+                  <span class="info-value">Bengali (Native), English (Professional Working)</span>
+                </div>
+              </div>
+            </div>
 
+            <div class="interests-card glass-panel">
+              <h3><i class="fa-solid fa-compass"></i> Primary Areas of Interest</h3>
+              <div class="interest-tags">
+                <span class="interest-tag"><i class="fa-solid fa-check"></i> Software Engineering</span>
+                <span class="interest-tag"><i class="fa-solid fa-check"></i> Frontend Architecture</span>
+                <span class="interest-tag"><i class="fa-solid fa-check"></i> Web Applications</span>
+                <span class="interest-tag"><i class="fa-solid fa-check"></i> Machine Learning & Predictive Modeling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="section skills-section">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag"><i class="fa-solid fa-gears"></i> Expertise</span>
+          <h2 class="section-title">Core Technical <span class="gradient-text">Skills</span></h2>
+          <p class="section-subtitle">Categorized breakdown of technologies, frameworks, and core engineering concepts.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="skills-category-tabs">
+          <button class="skill-tab active" data-category="all">All Skills</button>
+          <button class="skill-tab" data-category="programming">Languages</button>
+          <button class="skill-tab" data-category="frontend">Frontend</button>
+          <button class="skill-tab" data-category="backend">Backend & DB</button>
+          <button class="skill-tab" data-category="ml">Machine Learning</button>
+          <button class="skill-tab" data-category="tools">Tools & Concepts</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <!-- Populated dynamically by JS with interactive bars and icons -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED PROJECTS SHOWCASE -->
+    <section id="projects" class="section projects-section">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag"><i class="fa-solid fa-folder-open"></i> Portfolio</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Real-world academic and personal software implementations with repository links and complete specifications.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="projects-filter-bar">
+          <button class="project-filter-btn active" data-filter="all">All Projects</button>
+          <button class="project-filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="project-filter-btn" data-filter="fullstack">Full-Stack & Web</button>
+          <button class="project-filter-btn" data-filter="frontend">React & Next.js</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Populated dynamically by projects.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & TIMELINE SECTION -->
+    <section id="education" class="section education-section">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag"><i class="fa-solid fa-award"></i> Academic Journey</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Qualifications</span></h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Degree 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <span class="badge badge-primary"><i class="fa-solid fa-calendar"></i> April, 2027 (Expected)</span>
+                <span class="gpa-badge"><i class="fa-solid fa-star"></i> CGPA: 3.80 / 4.00</span>
+              </div>
+              <h3 class="timeline-title">Bachelor of Science in Computer Science & Engineering (B.Sc. CSE)</h3>
+              <h4 class="timeline-subtitle"><i class="fa-solid fa-building-columns"></i> American International University-Bangladesh (AIUB), Dhaka</h4>
+              <p class="timeline-desc">
+                Focusing on Software Engineering principles, Object-Oriented Programming, Data Structures & Algorithms, Database Management Systems, Frontend Web Technologies, and Applied Machine Learning.
+              </p>
+              <div class="timeline-tags">
+                <span>OOP</span> <span>Algorithms</span> <span>DBMS</span> <span>Software Engineering</span> <span>Machine Learning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Degree 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <span class="badge badge-secondary"><i class="fa-solid fa-calendar"></i> 2021</span>
+                <span class="gpa-badge success"><i class="fa-solid fa-trophy"></i> GPA: 5.00 / 5.00</span>
+              </div>
+              <h3 class="timeline-title">Higher Secondary Certificate (HSC)</h3>
+              <h4 class="timeline-subtitle"><i class="fa-solid fa-school"></i> Milestone College, Dhaka</h4>
+              <p class="timeline-desc">
+                Completed Higher Secondary education in Science discipline with top distinction (Perfect 5.00 GPA). Developed strong foundations in Mathematics, Physics, and analytical logic.
+              </p>
+            </div>
+          </div>
+
+          <!-- Degree 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <span class="badge badge-secondary"><i class="fa-solid fa-calendar"></i> 2019</span>
+                <span class="gpa-badge info"><i class="fa-solid fa-award"></i> GPA: 4.89 / 5.00</span>
+              </div>
+              <h3 class="timeline-title">Secondary School Certificate (SSC)</h3>
+              <h4 class="timeline-subtitle"><i class="fa-solid fa-school"></i> Kurmitola High School & College, Dhaka</h4>
+              <p class="timeline-desc">
+                Completed secondary education with high academic achievement in the Science background.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & CONNECT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag"><i class="fa-solid fa-comments"></i> Get In Touch</span>
+          <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+          <p class="section-subtitle">Interested in hiring me for an internship, collaborating on a project, or discussing software engineering?</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info-panel glass-panel">
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out directly via email, phone, or connected social profiles.</p>
+
+            <div class="contact-cards">
+              <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-details">
+                  <span class="contact-label">Direct Email</span>
+                  <a href="mailto:mahabubislam50725.aiub@gmail.com" class="contact-value">mahabubislam50725.aiub@gmail.com</a>
+                </div>
+                <button class="copy-btn" data-copy="mahabubislam50725.aiub@gmail.com" title="Copy Email">
+                  <i class="fa-solid fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-details">
+                  <span class="contact-label">Phone & WhatsApp</span>
+                  <a href="tel:+8801782088760" class="contact-value">+880 1782088760</a>
+                </div>
+                <button class="copy-btn" data-copy="+8801782088760" title="Copy Phone">
+                  <i class="fa-solid fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="contact-details">
+                  <span class="contact-label">GitHub Repository</span>
+                  <a href="https://github.com/Mahabubislam50725" target="_blank" rel="noopener" class="contact-value">github.com/Mahabubislam50725</a>
+                </div>
+                <a href="https://github.com/Mahabubislam50725" target="_blank" rel="noopener" class="copy-btn" title="Open Link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-details">
+                  <span class="contact-label">Current Address</span>
+                  <span class="contact-value">Dhaka, Bangladesh</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-panel glass-panel">
+            <h3>Send Me a Message</h3>
+            <form id="contact-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name <span class="required">*</span></label>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Your Email <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Internship Opportunity / Inquiry" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" placeholder="Hi Mahabub, I would like to invite you for an interview..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block shadow-glow">
+                <i class="fa-paper-plane fa-regular"></i> Send Message
+              </button>
             </form>
+            <div id="form-notification" class="form-notification"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        </section>
-     </footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="footer-brand">Mahabub Islam</a>
+        <p>Built with precision, responsive design, and clean web engineering.</p>
+      </div>
+      <div class="footer-center">
+        <p>&copy; 2026 Mahabub Islam. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/Mahabubislam50725" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:mahabubislam50725.aiub@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div id="project-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-container glass-panel">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME / PDF VIEWER MODAL -->
+  <div id="resume-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-container glass-panel modal-lg">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-file-pdf"></i> Mahabub Islam - Resume</h3>
+        <div class="modal-header-actions">
+          <button id="print-resume-btn" class="btn btn-secondary btn-sm"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+          <button class="modal-close" id="resume-modal-close-btn">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body resume-body" id="printable-resume">
+        <!-- Clean Printable Resume Layout -->
+        <div class="resume-sheet">
+          <div class="resume-header">
+            <h1>MAHABUB ISLAM</h1>
+            <p class="resume-subtitle">CSE Student | Software Engineering | Frontend Development | Machine Learning</p>
+            <p class="resume-contact">
+              Dhaka, Bangladesh &bull; 01782088760 &bull; mahabubislam50725.aiub@gmail.com &bull; 
+              <a href="https://github.com/Mahabubislam50725" target="_blank">GitHub Profile</a>
+            </p>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="resume-section-title">PROFESSIONAL PROFILE</h2>
+            <p>Computer Science and Engineering student at American International University-Bangladesh (AIUB) with hands-on experience in frontend development, database-driven web applications, and machine learning. Skilled in React.js, Next.js, JavaScript, Tailwind CSS, PHP, MySQL, Python, and Scikit-learn. Built academic and personal projects involving responsive interfaces, application state management, relational databases, and machine learning classification. Seeking a Software Engineering, Frontend Development, or Machine Learning internship.</p>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="resume-section-title">CORE TECHNICAL SKILLS</h2>
+            <div class="resume-skills-grid">
+              <p><strong>Programming:</strong> Python, JavaScript, C#, PHP, SQL</p>
+              <p><strong>Frontend:</strong> React.js, Next.js, HTML5, CSS3, Tailwind CSS</p>
+              <p><strong>Backend & Database:</strong> PHP, MySQL, SQL Server</p>
+              <p><strong>Machine Learning:</strong> Pandas, NumPy, Scikit-learn, Matplotlib</p>
+              <p><strong>Tools:</strong> Git, GitHub, Jupyter Notebook, VS Code</p>
+              <p><strong>Core Concepts:</strong> OOP, Data Structures & Algorithms, DBMS, Software Engineering</p>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="resume-section-title">EDUCATION</h2>
+            <div class="resume-edu-item">
+              <div class="resume-flex-between">
+                <strong>Bachelor of Science in Computer Science and Engineering</strong>
+                <span>April, 2027 (Expected)</span>
+              </div>
+              <div>American International University-Bangladesh (AIUB), Dhaka &bull; <strong>CGPA: 3.80 / 4.00</strong></div>
+            </div>
+            <div class="resume-edu-item" style="margin-top: 8px;">
+              <div class="resume-flex-between">
+                <strong>Higher Secondary Certificate (HSC)</strong>
+                <span>2021 &bull; <strong>GPA: 5.00 / 5.00</strong></span>
+              </div>
+              <div>Milestone College, Dhaka</div>
+            </div>
+            <div class="resume-edu-item" style="margin-top: 8px;">
+              <div class="resume-flex-between">
+                <strong>Secondary School Certificate (SSC)</strong>
+                <span>2019 &bull; <strong>GPA: 4.89 / 5.00</strong></span>
+              </div>
+              <div>Kurmitola High School & College, Dhaka</div>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="resume-section-title">SELECTED PROJECTS</h2>
+            
+            <div class="resume-proj-item">
+              <div class="resume-flex-between">
+                <strong>Telco Customer Churn Prediction</strong>
+                <a href="https://github.com/Mahabubislam50725" target="_blank">GitHub Link</a>
+              </div>
+              <div class="resume-tech">Python | Pandas | NumPy | Scikit-learn | Matplotlib | Jupyter Notebook</div>
+              <ul>
+                <li>Cleaned and preprocessed telecom customer data and performed exploratory analysis to identify churn-related patterns.</li>
+                <li>Developed and compared Logistic Regression, K-Nearest Neighbors, and Random Forest classifiers.</li>
+                <li>Applied cross-validation and GridSearchCV for model selection and hyperparameter tuning.</li>
+                <li>Evaluated performance using Accuracy, Precision, Recall, F1-score, ROC-AUC, and confusion matrices.</li>
+              </ul>
+            </div>
+
+            <div class="resume-proj-item">
+              <div class="resume-flex-between">
+                <strong>Multi-Vendor E-Commerce Management System</strong>
+                <a href="https://github.com/Mahabubislam50725" target="_blank">GitHub Link</a>
+              </div>
+              <div class="resume-tech">PHP | MySQL | JavaScript | HTML | CSS</div>
+              <ul>
+                <li>Built a database-driven e-commerce system with Admin, Seller, and Customer roles.</li>
+                <li>Implemented product, user, seller, order, and account management functionalities.</li>
+                <li>Designed relational database structures in MySQL and integrated frontend interfaces with PHP/JavaScript backend logic.</li>
+              </ul>
+            </div>
+
+            <div class="resume-proj-item">
+              <div class="resume-flex-between">
+                <strong>DigiTools Platform</strong>
+                <a href="https://github.com/Mahabubislam50725" target="_blank">GitHub Link</a>
+              </div>
+              <div class="resume-tech">React.js | JavaScript | Tailwind CSS</div>
+              <ul>
+                <li>Developed a responsive multi-tool web platform using reusable React components.</li>
+                <li>Designed responsive interfaces with Tailwind CSS and organized application using component-based architecture.</li>
+              </ul>
+            </div>
+
+            <div class="resume-proj-item">
+              <div class="resume-flex-between">
+                <strong>Friend Tracker</strong>
+                <a href="https://github.com/Mahabubislam50725" target="_blank">GitHub Link</a>
+              </div>
+              <div class="resume-tech">React.js | React Router | Context API | Tailwind CSS</div>
+              <ul>
+                <li>Developed an interactive application for managing friends and communication activities.</li>
+                <li>Implemented client-side routing with React Router, shared state management with Context API, and responsive dynamic interfaces.</li>
+              </ul>
+            </div>
+
+            <div class="resume-proj-item">
+              <div class="resume-flex-between">
+                <strong>Online Book Borrowing Platform</strong>
+                <a href="https://github.com/Mahabubislam50725" target="_blank">GitHub Link</a>
+              </div>
+              <div class="resume-tech">Next.js | JavaScript | HTML | CSS</div>
+              <ul>
+                <li>Developed a responsive book-borrowing application with structured pages and reusable Next.js components.</li>
+                <li>Implemented responsive interfaces using modern JavaScript, HTML, and CSS practices.</li>
+              </ul>
+            </div>
+
+            <div class="resume-proj-item">
+              <div class="resume-flex-between">
+                <strong>Dragon News</strong>
+                <a href="https://github.com/Mahabubislam50725" target="_blank">GitHub Link</a>
+              </div>
+              <div class="resume-tech">Next.js | JavaScript | HTML | CSS</div>
+              <ul>
+                <li>Developed a news-focused web application with reusable components for categorized news presentation.</li>
+                <li>Created structured, responsive layouts optimized for desktop and mobile viewing.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="resume-section-title">ADDITIONAL INFORMATION</h2>
+            <p><strong>Areas of Interest:</strong> Software Engineering, Frontend Development, Web Applications, Machine Learning</p>
+            <p><strong>Languages:</strong> Bengali - Native | English - Professional Working Proficiency</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
